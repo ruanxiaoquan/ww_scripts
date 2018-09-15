@@ -1,0 +1,36 @@
+'use strict';
+
+const chalk = require('chalk');
+const init = require('../src/scripts/init');
+
+const argv = require('yargs')
+  .usage('Usage：$0 <command> [options]')
+  .option('p', {
+    alias: 'port',
+    type: 'number',
+    describe: '端口号',
+  })
+  .option('n', {
+    alias: 'name',
+    type: 'string',
+    describe: '项目名称',
+  })
+  .alias('h', 'help')
+  .epilog('copyright 2018').argv;
+
+console.log(argv);
+
+let cmd = argv._[0] || '';
+
+switch (cmd) {
+  case 'init':
+    break;
+  case 'build':
+    break;
+  case 'publish':
+    break;
+  default:
+    console.log('没有此命令');
+    process.exit(1);
+    break;
+}
