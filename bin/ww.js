@@ -2,14 +2,10 @@
 
 const chalk = require('chalk');
 const init = require('../src/scripts/init');
+const DevServer = require('../src/scripts/devServer');
 
 const argv = require('yargs')
   .usage('Usage：$0 <command> [options]')
-  .option('p', {
-    alias: 'port',
-    type: 'number',
-    describe: '端口号',
-  })
   .option('n', {
     alias: 'name',
     type: 'string',
@@ -17,13 +13,16 @@ const argv = require('yargs')
   })
   .alias('h', 'help')
   .epilog('copyright 2018').argv;
-
-console.log(argv);
-
-let cmd = argv._[0] || '';
-
+const cmd = argv._[0] || '';
 switch (cmd) {
   case 'init':
+    const projectName = argv._[1] || argv.n;
+    init.create({
+      projectName,
+    });
+    break;
+  case 'dev':
+    new DevServer().run();
     break;
   case 'build':
     break;

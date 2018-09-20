@@ -1,0 +1,23 @@
+
+  {
+    "name": "test",
+    "version": "1.0.0",
+    "description": "nnn",
+    "main": "index.js",
+    "scripts": {
+      "start": "ww_cli dev",
+      "build": "ww_cli build",
+      "publish": "ww_cli publish",
+      "dev": "node ../../bin/ww dev",
+      "test": "echo 'Error: no test specified' && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "react": "^16.4.1",
+      "react-dom": "^16.4.1",
+      "react-router-dom": "^4.3.1",
+      "andt-mobile": "^2.2.5"
+},
+    "devDependencies": {}
+  }
